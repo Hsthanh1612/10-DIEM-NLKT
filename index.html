@@ -413,6 +413,81 @@ body.th .nav .btn.primary{font-weight:600}
   body.th .tsec p,body.th .tsec li{font-size:16.5px}
   body.th .fcard{padding:var(--s8) var(--s4);min-height:240px}
 }
+
+/* ===== Ôn tập lý thuyết – Đọc: bố cục giáo trình + sidebar (chỉ trong body.th) ===== */
+body.th{--t-topic:30px;--t-label:14px;--t-body:17px;--t-cap:13px;--tbh:96px}
+body.th .wrap.rd-wide{max-width:1160px}
+body.th .rd-h1{display:none}
+.thgrid{display:grid;grid-template-columns:272px minmax(0,1fr);gap:var(--s12);align-items:start;margin-top:var(--s6)}
+body.th .sidenav{position:sticky;top:calc(var(--tbh) + var(--s4));max-height:calc(100vh - var(--tbh) - var(--s8));overflow:auto;overscroll-behavior:contain;padding-right:var(--s2)}
+body.th .sn-toggle{display:none}
+body.th .sn-h{font-size:15px;line-height:1.4;font-weight:600;color:var(--text);padding:0 0 var(--s3);margin-bottom:var(--s2);border-bottom:1px solid var(--hair)}
+body.th .sn-list{list-style:none;margin:0;padding:0}
+body.th .sn-list button{display:flex;gap:var(--s3);width:100%;text-align:left;border:0;border-radius:8px;background:transparent;color:var(--muted);padding:var(--s2) var(--s3);font:inherit;font-size:14px;line-height:1.45;min-height:36px;cursor:pointer;transition:background-color .15s,color .15s}
+body.th .sn-list button:hover{background:var(--surface2);color:var(--text)}
+body.th .sn-list button.cur{background:var(--accent-soft);color:var(--accent);font-weight:600}
+body.th .sn-n{flex:none;min-width:1.6em;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:500}
+body.th .sn-list button.cur .sn-n{color:var(--accent)}
+body.th .sn-list button.seen:not(.cur) .sn-n::after{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--ok);margin-left:3px;vertical-align:middle}
+body.th .rd{min-width:0;max-width:var(--read);padding-bottom:var(--s12)}
+body.th .rd-kicker{font-size:var(--t-cap);font-weight:600;color:var(--muted);letter-spacing:.02em;margin-bottom:var(--s2)}
+body.th .rd-title{font-size:var(--t-topic);line-height:1.3;font-weight:650;letter-spacing:-.01em;margin:0 0 var(--s6);color:var(--text)}
+body.th .tsec{margin-top:var(--s8)}
+body.th .rd-title+.tsec{margin-top:var(--s4)}
+body.th .tsec>.lb{display:flex;align-items:center;gap:var(--s2);font-size:var(--t-label);font-weight:600;color:var(--muted);letter-spacing:.01em;padding:0 0 var(--s2);margin-bottom:var(--s4);border:0;border-bottom:1px solid var(--hair)}
+body.th .tsec>.lb::before{display:none}
+body.th .tsec>.lb i{font-style:normal;display:inline-grid;place-items:center;width:22px;height:22px;border-radius:6px;background:var(--surface2);color:var(--text);font-size:12px;font-weight:700}
+body.th .tsec>.lb.a,body.th .tsec>.lb.b,body.th .tsec>.lb.c{color:var(--muted)}
+body.th .tsec p,body.th .tsec li{font-size:var(--t-body);line-height:1.7}
+body.th ul.defs{list-style:none;padding:0;margin:0 0 var(--s4)}
+body.th ul.defs>li{padding:var(--s3) 0;margin:0;border-bottom:1px solid var(--hair)}
+body.th ul.defs>li:last-child{border-bottom:0}
+body.th ul.defs>li>b:first-child{color:var(--text);font-weight:650}
+body.th ul.defs ul{margin:var(--s2) 0 0}
+body.th .formula{display:block;background:var(--surface2);border:1px solid var(--hair);box-shadow:inset 3px 0 0 var(--text);border-radius:10px;padding:var(--s4) var(--s6);margin:var(--s3) 0;font-size:18px;line-height:1.65;font-weight:550;font-variant-numeric:tabular-nums;overflow-wrap:anywhere;overflow-x:auto;max-width:100%;text-align:left}
+body.th .lb+.formula,body.th p+.formula,body.th ul+.formula,body.th .tw+.formula{margin-top:var(--s6)}
+body.th .formula+p,body.th .formula+ul,body.th .formula+.tw{margin-top:var(--s6)}
+body.th p.ex,body.th li.ex{background:var(--surface);border:1px solid var(--hair);border-radius:10px;padding:var(--s3) var(--s4);margin:var(--s4) 0;font-size:16px;line-height:1.7}
+body.th li.ex,body.th li.nt{list-style:none;margin-left:-22px}
+body.th .nt{padding:var(--s3) var(--s4);margin:var(--s4) 0;border-radius:0 10px 10px 0;border-left:3px solid var(--line);background:var(--surface2);font-size:16px;line-height:1.7}
+body.th .nt.warn{border-left-color:var(--warn);background:var(--warn-soft)}
+body.th .nt.note{border-left-color:var(--accent)}
+body.th .nt.tip{border-left-color:var(--ok);background:var(--ok-soft)}
+body.th .sup{border-left:2px dashed var(--line);padding-left:var(--s3)}
+body.th .tw{overflow-x:auto;margin:var(--s4) 0 var(--s6);border:1px solid var(--hair);border-radius:10px;-webkit-overflow-scrolling:touch}
+body.th .tw:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+body.th .tw table.t{margin:0;min-width:560px;width:100%;border-collapse:collapse;font-size:15px;line-height:1.6}
+body.th .tw table.t th{text-align:left;font-weight:600;background:var(--surface2);padding:var(--s3) var(--s4);border-bottom:1px solid var(--line);vertical-align:bottom}
+body.th .tw table.t td{padding:var(--s3) var(--s4);vertical-align:top;border-bottom:1px solid var(--hair)}
+body.th .tw table.t tr:last-child td{border-bottom:0}
+body.th .tw table.t td:first-child{min-width:130px}
+body.th .rd>.tsrc{font-size:var(--t-cap);line-height:1.55;color:var(--muted);margin-top:var(--s8);padding-top:var(--s3);border-top:1px solid var(--hair)}
+body.th .rd .note.theory-notes{margin-top:var(--s2);max-width:none;font-size:16px;line-height:1.7}
+body.th .rd-pager{display:flex;justify-content:space-between;gap:var(--s3);margin-top:var(--s8)}
+body.th .rd-pager .btn{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;max-width:48%;min-height:48px;padding:var(--s2) var(--s4)}
+body.th .rd-pager .btn.primary{align-items:flex-end;text-align:right;margin-left:auto}
+body.th .rd-pager small{font-size:12px;opacity:.8;font-weight:500}
+body.th .rd-pager span{font-size:14px;line-height:1.35;font-weight:600}
+@media (max-width:899px){
+  body.th.th .topbar{position:static}
+  body.th .rd-h1{display:block;font-size:22px;margin:var(--s4) 0 var(--s2)}
+  .thgrid{grid-template-columns:minmax(0,1fr);gap:var(--s4);margin-top:var(--s2)}
+  body.th .sidenav{position:sticky;top:var(--tbh);z-index:15;max-height:none;overflow:visible;padding:var(--s2) 0;background:var(--bg)}
+  body.th .sn-toggle{display:flex;align-items:center;gap:var(--s3);width:100%;min-height:48px;text-align:left;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--text);padding:var(--s2) var(--s4);font:inherit;font-size:15px;font-weight:600;cursor:pointer}
+  body.th .sn-toggle .sn-t{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  body.th .sn-cv{flex:none;width:8px;height:8px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);margin-top:-4px;transition:transform .2s}
+  body.th .sidenav.open .sn-cv{transform:rotate(-135deg);margin-top:4px}
+  body.th .sn-panel{display:none;position:absolute;left:0;right:0;top:100%;max-height:min(60vh,420px);overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:var(--s2);box-shadow:0 8px 24px rgba(0,0,0,.14)}
+  body.th .sidenav.open .sn-panel{display:block}
+  body.th .sn-h{display:none}
+  body.th .sn-list button{min-height:44px;font-size:15px}
+  body.th .rd-title{font-size:25px}
+  body.th .tsec p,body.th .tsec li{font-size:16.5px}
+  body.th .formula{font-size:16.5px;padding:var(--s3) var(--s4)}
+  body.th .rd-pager .btn{max-width:49%}
+}
+@media (min-width:900px) and (max-width:1100px){ .thgrid{grid-template-columns:232px minmax(0,1fr);gap:var(--s8)} }
+@media (prefers-reduced-motion:reduce){body.th .sn-list button,body.th .sn-cv{transition:none}}
 </style>
 </head>
 <body>
@@ -613,16 +688,31 @@ function syncTheoryTheme(){
   document.body.classList.toggle('th',on);
   if(on) document.body.dataset.th = (S.ui&&S.ui.thTheme)||'auto'; else delete document.body.dataset.th;
 }
-function thSpy(){   // làm nổi mục đang đọc trong mục lục
-  if(view.name!=='theory'||view.mode!=='read') return;
-  const tops=[...document.querySelectorAll('.topic')]; if(!tops.length) return;
-  let cur=tops[0].id; for(const el of tops){ if(el.getBoundingClientRect().top<=140) cur=el.id; else break; }
-  document.querySelectorAll('.toc button').forEach(b=>b.classList.toggle('cur',b.dataset.id===cur));
+function thEnhance(root){   // chỉ thêm class/bao bọc để trình bày; không đổi chữ
+  root.querySelectorAll('table.t').forEach(tb=>{ const w=document.createElement('div'); w.className='tw'; w.tabIndex=0; tb.style.minWidth=Math.max(560,(tb.rows[0]?tb.rows[0].cells.length:4)*150)+'px'; tb.parentNode.insertBefore(w,tb); w.appendChild(tb); });
+  root.querySelectorAll('p,li').forEach(el=>{
+    const s=el.textContent.trim();
+    if(/^(VD|Ví dụ)\b/.test(s)) el.classList.add('ex');
+    else if(/^(Dễ nhầm)\b/.test(s)) el.classList.add('nt','warn');
+    else if(/^(Lưu ý|Chú ý)\b/.test(s)) el.classList.add('nt','note');
+    else if(/^(Mẹo)\b/.test(s)) el.classList.add('nt','tip');
+    else if(/^Bổ sung\b/.test(s)||el.querySelector(':scope>.tag.ext')) el.classList.add('sup');
+  });
+  root.querySelectorAll('.tsec>ul').forEach(ul=>{
+    const li=[...ul.children]; if(li.length&&li.every(x=>x.firstElementChild&&x.firstElementChild.tagName==='B'&&x.textContent.trim().startsWith(x.firstElementChild.textContent.trim()))) ul.classList.add('defs');
+  });
 }
-let thSpyBusy=false;
-window.addEventListener('scroll',()=>{ if(thSpyBusy) return; thSpyBusy=true; requestAnimationFrame(()=>{ thSpyBusy=false; thSpy(); }); },{passive:true});
-
+function thLayout(){   // chiều cao thanh công cụ để sidebar bám đúng vị trí
+  const tb=document.querySelector('.topbar'); if(tb) document.body.style.setProperty('--tbh',(window.innerWidth<900?0:tb.offsetHeight)+'px');
+}
+window.addEventListener('resize',()=>{ if(view.name==='theory') thLayout(); });
+function thGoTopic(id){
+  view.topic=id; save(); render();
+  const g=document.querySelector('.thgrid'); if(g){ const y=g.getBoundingClientRect().top+window.scrollY-(parseFloat(document.body.style.getPropertyValue('--tbh'))||90)-8; if(window.scrollY>y) window.scrollTo(0,Math.max(0,y)); }
+  const c=document.querySelector('.sidenav .cur'); if(c&&c.scrollIntoView) c.scrollIntoView({block:'nearest'});
+}
 function render(){
+  $app.classList.remove('rd-wide');
   syncAcct(false);
   syncTheoryTheme();
   if(view.name==='home') return renderHome();
@@ -799,20 +889,34 @@ function renderTheory(){
   const head=`<div class="topbar"><div class="topline"><button class="btn ghost" data-act="back">← Quay lại</button><span class="title">Ôn lý thuyết</span>
     <span class="seg th-theme" role="group" aria-label="Giao diện sáng hoặc tối">${[['auto','Tự động'],['light','Sáng'],['dark','Tối']].map(([v,l])=>`<button class="${((S.ui&&S.ui.thTheme)||'auto')===v?'on':''}" data-act="ththeme" data-v="${v}">${l}</button>`).join('')}</span></div>
     <div class="tools"><span class="seg"><button class="${mode==='read'?'on':''}" data-act="thmode" data-m="read">📖 Đọc lý thuyết</button><button class="${mode==='cards'?'on':''}" data-act="thmode" data-m="cards">🃏 Flashcard (${th.flashcards.length})</button><button class="${mode==='formulas'?'on':''}" data-act="thmode" data-m="formulas">🧮 Công thức (${(th.fx&&th.fx.items||[]).length})</button></span>
-    ${mode==='read'?'<span class="sp"></span><button class="btn ghost" data-act="thall" data-v="open">Mở hết</button><button class="btn ghost" data-act="thall" data-v="close">Thu gọn hết</button>':''}</div></div>`;
+</div></div>`;
   if(mode==='read'){
     $nav.hidden=true;
-    const col=TS().collapsed;
-    const body=th.topics.map((tp,i)=>`<section class="topic ${col[tp.id]?'closed':''}" id="${tp.id}">
-      <button class="th" data-act="thtoggle" data-id="${tp.id}"><span class="qnum">${i+1}.</span> ${tp.title}<span class="cv">▾</span></button>
-      <div class="tb">
-        <div class="tsec"><span class="lb a">A · Khái niệm và kiến thức cốt lõi</span>${tp.core}</div>
-        ${tp.formulas?`<div class="tsec"><span class="lb b">B · Công thức và cách tính</span>${tp.formulas}</div>`:''}
-        ${tp.compare?`<div class="tsec"><span class="lb c">C · Phân biệt dễ nhầm</span>${tp.compare}</div>`:''}
-        <div class="tsrc">Nguồn: ${esc(tp.source)}</div></div></section>`).join('');
-    $app.innerHTML=head+`<h1 class="pagetitle ch">${esc(th.title)}</h1><div class="toc">${th.topics.map((tp,i)=>`<button data-act="thgoto" data-id="${tp.id}">${i+1}. ${tp.title}</button>`).join('')}</div>`+body+
-      (th.notes?`<div class="note theory-notes"><b>Lưu ý:</b> ${th.notes}</div>`:'');
-    thSpy();
+    const T=TS(); T.active=T.active||{}; T.seen=T.seen||{}; T.seen[ch]=T.seen[ch]||{};
+    const ids=th.topics.map(x=>x.id).concat(th.notes?['notes']:[]);
+    let cur=view.topic||T.active[ch]; if(!ids.includes(cur)) cur=ids[0];
+    view.topic=cur; T.active[ch]=cur; T.seen[ch][cur]=1;
+    const n=ids.length, i=ids.indexOf(cur);
+    const label=id=>id==='notes'?'Lưu ý của chương':th.topics.find(x=>x.id===id).title;
+    const navBtn=id=>`<li><button class="${id===cur?'cur':''}${T.seen[ch][id]?' seen':''}" data-act="thtopic" data-id="${id}" ${id===cur?'aria-current="true"':''}><span class="sn-n">${id==='notes'?'•':ids.indexOf(id)+1}</span><span class="sn-t">${esc(label(id))}</span></button></li>`;
+    let main;
+    if(cur==='notes'){
+      main=`<div class="rd-kicker">Chương này</div><h2 class="rd-title">Lưu ý của chương</h2><div class="note theory-notes"><b>Lưu ý:</b> ${th.notes}</div>`;
+    } else {
+      const tp=th.topics.find(x=>x.id===cur);
+      main=`<div class="rd-kicker">Chủ đề ${i+1} / ${th.topics.length}</div><h2 class="rd-title">${tp.title}</h2>
+        <div class="tsec sa"><span class="lb a"><i>A</i>Khái niệm và kiến thức cốt lõi</span>${tp.core}</div>
+        ${tp.formulas?`<div class="tsec sb"><span class="lb b"><i>B</i>Công thức và cách tính</span>${tp.formulas}</div>`:''}
+        ${tp.compare?`<div class="tsec sc"><span class="lb c"><i>C</i>Phân biệt dễ nhầm</span>${tp.compare}</div>`:''}
+        <div class="tsrc">Nguồn: ${esc(tp.source)}</div>`;
+    }
+    const pager=`<div class="rd-pager">${i>0?`<button class="btn" data-act="thtopic" data-id="${ids[i-1]}"><small>← Trước</small><span>${esc(label(ids[i-1]))}</span></button>`:'<span></span>'}${i<n-1?`<button class="btn primary" data-act="thtopic" data-id="${ids[i+1]}"><small>Tiếp →</small><span>${esc(label(ids[i+1]))}</span></button>`:'<span></span>'}</div>`;
+    $app.classList.add('rd-wide');
+    $app.innerHTML=head+`<h1 class="pagetitle ch rd-h1">${esc(th.title)}</h1><div class="thgrid">
+      <nav class="sidenav" aria-label="Chủ đề trong chương"><button class="sn-toggle" data-act="thsn" aria-expanded="false"><span class="sn-n">${cur==='notes'?'•':i+1}</span><span class="sn-t">${esc(label(cur))}</span><span class="sn-cv" aria-hidden="true"></span></button>
+        <div class="sn-panel"><div class="sn-h">${esc(th.title)}</div><ol class="sn-list">${ids.map(navBtn).join('')}</ol></div></nav>
+      <article class="rd" id="rd">${main}${pager}</article></div>`;
+    thEnhance(document.getElementById('rd')); thLayout();
     return;
   }
   if(mode==='formulas'){
@@ -880,9 +984,9 @@ document.addEventListener('click',e=>{
     case 'theory': view={name:'theory',ch:el.dataset.ch,mode:'read'}; cardFlipped=false; render(); window.scrollTo(0,0); break;
     case 'ththeme': { S.ui=S.ui||{}; S.ui.thTheme=el.dataset.v; save(); document.body.dataset.th=el.dataset.v; document.querySelectorAll('.th-theme button').forEach(b=>b.classList.toggle('on',b===el)); break; }
     case 'thmode': view.mode=el.dataset.m; cardFlipped=false; render(); window.scrollTo(0,0); break;
-    case 'thtoggle': { const c=TS().collapsed, id=el.dataset.id; if(c[id]) delete c[id]; else c[id]=true; save(); el.closest('.topic').classList.toggle('closed',!!c[id]); break; }
-    case 'thall': { const c=TS().collapsed; for(const tp of THEORY[view.ch].topics){ if(el.dataset.v==='close') c[tp.id]=true; else delete c[tp.id]; } save(); render(); break; }
-    case 'thgoto': { const c=TS().collapsed; delete c[el.dataset.id]; save(); render(); const x=document.getElementById(el.dataset.id); if(x) x.scrollIntoView({behavior:'smooth',block:'start'}); break; }
+    case 'thtopic': { const sn=document.querySelector('.sidenav'); if(sn) sn.classList.remove('open'); thGoTopic(el.dataset.id); break; }
+    case 'thsn': { const sn=el.closest('.sidenav'); const o=sn.classList.toggle('open'); el.setAttribute('aria-expanded',o); break; }
+    case 'thgoto': { const x=document.getElementById(el.dataset.id); if(x) x.scrollIntoView({behavior:'smooth',block:'start'}); break; }
     case 'cflip': cardFlipped=!cardFlipped; render(); break;
     case 'cprev': cardGo(-1); break;
     case 'cnext': cardGo(1); break;
